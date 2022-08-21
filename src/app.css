@@ -6,15 +6,150 @@
 }
 
 .view-section {
-  transition: transform 0.7s ease-in-out;
+  transition: transform 0.9s ease-in-out;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  overflow: hidden;
 }
 
 .active {
   transform: translate3d(0, 0, 0);
   z-index: 1;
+}
+
+.parallax-img {
+  width: 15rem;
+  position: absolute;
+  object-position: center;
+}
+
+#circle-img {
+  top: -10rem;
+}
+
+#empty-center-square-img {
+  --transform: translate(-50%, -25%);
+  width: clamp(20rem, 35vw, 50rem);
+  transform: var(--transform);
+  left: calc(50% + 15vw);
+  top: calc(50% - 10%);
+  animation: shapeMovement 3s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+#circle-img {
+  --transform: ;
+  width: clamp(10rem, 15vw, 25rem);
+  top: 2%;
+  left: 5%;
+  animation: floatingMovement 2s ease-in-out infinite alternate-reverse;
+}
+
+#empty-center-triangle-img {
+  --transform: scale(2) rotate(45deg);
+  width: clamp(25rem, 30vw, 42.5rem);
+  bottom: 3%;
+  left: -5rem;
+  transform: var(--transform);
+  animation: floatingMovement 3s ease-in-out infinite alternate;
+}
+
+#cylinder-img {
+  width: clamp(10rem, 15vw, 20rem);
+  top: 5%;
+  right: -4rem;
+}
+
+.name-title-container {
+  width: clamp(17rem, 65%, 60rem);
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 4%;
+  text-transform: capitalize;
+  font-size: clamp(0.85rem, 2.9vw, 3rem);
+  color: #fff;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.name-title-container > * {
+  transition: transform 0.55s ease-in-out;
+}
+
+.name-title-container > h1 {
+  transform: var(--default-view-1-title-transform);
+}
+
+.name-title-container > h4 {
+  transform: var(--default-view-2-title-transform);
+  color: #7be3d2;
+}
+
+.name-title-active > h1,
+.name-title-active > h4 {
+  transform: translate(0);
+}
+
+.name-title-first-active > h1 {
+  transition-delay: 0.1s !important;
+}
+
+.name-title-first-active > h4 {
+  transition-delay: 0.4s !important;
+}
+
+.name-title-active > h1 {
+  transition-delay: 0.5s;
+}
+
+.name-title-active > h4 {
+  transition-delay: 0.9s;
+}
+
+@media screen and (max-width: 600px) {
+  .name-title-container {
+    width: clamp(50vw, 92.5vw, 100%) !important;
+    font-size: 7.5vw;
+    text-align: center;
+  }
+
+  .name-title-container > h1 {
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 5px #212121);
+  }
+
+  .name-title-container > h4 {
+    filter: drop-shadow(0 3px #212121);
+  }
+
+  #empty-center-triangle-img {
+    bottom: -5%;
+  }
+
+  #cylinder-img {
+    width: 8rem;
+    right: -3rem;
+  }
+}
+
+@keyframes shapeMovement {
+  from {
+    transform: var(--transform) translateY(10px);
+  }
+  to {
+    transform: var(--transform) translateY(-5px) scale(1.1);
+  }
+}
+
+@keyframes floatingMovement {
+  from {
+    transform: var(--transform) translate(0);
+  }
+  to {
+    transform: var(--transform) translate(0, 7.5px);
+  }
 }

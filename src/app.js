@@ -1,7 +1,6 @@
 import viewSectionDatas from "./viewSectionDatas";
-import utils from "./utils/utilityFuncs";
-
-/* creates and return page section tags */
+import slideChangeEventHandler from "./utils/slideChangeEvents";
+import resetSectionStyles from "./utils/resetSectionStyles";
 
 /* scroll between sections handlers */
 
@@ -21,12 +20,13 @@ const stopAutoPlay = function () {
   }, 1000);
 };
 
-const checkSections = function () {
+const checkSections = function (lastIndex) {
   for (let i = 0; i < viewSectionDatas.length; i++) {
     const childElement = container.children;
 
     if (i === slider.activeIndex) {
       childElement[i].style.transform = "";
+      slideChangeEventHandler(slider.activeIndex, lastIndex, slider.sections);
     } else if (i > slider.activeIndex) {
       childElement[i].style.transform = "translate3d(0,100%,0)";
     } else if (i < slider.activeIndex) {
@@ -37,6 +37,7 @@ const checkSections = function () {
 
 const changeSection = (direction) => {
   slider.idle = false;
+  const lastIndex = slider.activeIndex;
   slider.sections[slider.activeIndex].classList.remove("active");
   if (direction === "down") {
     slider.activeIndex =
@@ -48,16 +49,25 @@ const changeSection = (direction) => {
       slider.activeIndex - 1 < 0 ? slider.activeIndex : slider.activeIndex - 1;
   }
   slider.sections[slider.activeIndex].classList.add("active");
-  checkSections();
-  console.log(slider.activeIndex);
+
+  resetSectionStyles();
+  checkSections(lastIndex);
 };
 
 const wheelControl = () => {
   container.addEventListener("wheel", (e) => {
     if (slider.idle) {
       const direction = e.deltaY > 0 ? "down" : "up";
-      stopAutoPlay();
-      changeSection(direction);
+      if (
+        !(
+          (slider.activeIndex === 0 && direction === "up") ||
+          (slider.activeIndex === viewSectionDatas.length - 1 &&
+            direction === "down")
+        )
+      ) {
+        stopAutoPlay();
+        changeSection(direction);
+      }
     }
   });
 };
@@ -86,7 +96,9 @@ const start = function () {
   wheelControl();
   window.innerWidth <= 1024 && touchControl();
 
-  checkSections();
+  checkSections(slider.activeIndex);
+
+  document.querySelectorAll("img").forEach((img) => (img.draggable = false));
 };
 
 export { start };

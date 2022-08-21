@@ -1,17 +1,29 @@
 {
-  "name": "personal-portofolio-page",
+  "name": "personal-portfolio-page",
   "version": "1.0.0",
-  "description": "a personal portofolio page",
+  "description": "a personal portfolio page",
   "main": "index.js",
   "scripts": {
     "babel": "babel src/index.js -o public/bundle.js --presets @babel/preset-env --watch",
     "build": "webpack --watch"
   },
-  "keywords": [],
+  "keywords": [
+    "personal portfolio",
+    "portfolio",
+    "personal",
+    "MMD Saleh",
+    "project",
+    "javascript",
+    "js"
+  ],
   "author": "MMD Saleh",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
   }
