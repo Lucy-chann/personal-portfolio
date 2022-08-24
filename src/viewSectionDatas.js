@@ -1,28 +1,33 @@
+import squareImg from "./assets/parallax shapes/main-square-fluid.png";
+import cylinderImg from "./assets/parallax shapes/main-cylinder-fluid.png";
+import circleImg from "./assets/parallax shapes/main-circle-fluid.png";
+import emptyCenterTriangleImg from "./assets/parallax shapes/shape-triangle-emptyCenter.png";
+
 const fluidImageDatas = [
   {
     imageId: 1,
     id: "empty-center-square-img",
-    fileName: "main-square-fluid.png",
+    img: squareImg,
   },
   {
     imageId: 2,
     id: "cylinder-img",
-    fileName: "main-cylinder-fluid.png",
+    img: cylinderImg,
   },
   {
     imageId: 3,
     id: "circle-img",
-    fileName: "main-circle-fluid.png",
+    img: circleImg,
   },
   {
     imageId: 4,
     id: "empty-center-triangle-img",
-    fileName: "shape-triangle-emptyCenter.png",
+    img: emptyCenterTriangleImg,
   },
 ];
 
-const firstViewImages = fluidImageDatas.map(({ id, fileName }) => {
-  return `<img src="/src/assets/parallax shapes/${fileName}" id=${id} class="parallax-img" alt="fluid_shape" />`;
+const firstViewImages = fluidImageDatas.map(({ id, img }) => {
+  return `<img src=${img} id=${id} class="parallax-img" alt="fluid_shape" />`;
 });
 
 const viewSectionDatas = [

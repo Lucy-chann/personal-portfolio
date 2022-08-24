@@ -83,8 +83,16 @@ const touchControl = function () {
 
     if (slider.idle) {
       const direction = delta < 0 ? "down" : "up";
-      stopAutoPlay();
-      changeSection(direction);
+      if (
+        !(
+          (slider.activeIndex === 0 && direction === "up") ||
+          (slider.activeIndex === viewSectionDatas.length - 1 &&
+            direction === "down")
+        )
+      ) {
+        stopAutoPlay();
+        changeSection(direction);
+      }
     }
   };
 
