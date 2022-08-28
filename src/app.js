@@ -1,23 +1,24 @@
 import viewSectionDatas from './viewSectionDatas'
 import slideChangeEventHandler from './utils/slideChangeEvents'
 import resetSectionStyles from './utils/resetSectionStyles'
+import getElements from './elements'
 
 /* scroll between sections handlers */
 
-const container = document.getElementById('container')
+const { container } = getElements()
 
 const slider = {
   sections: document.getElementsByClassName('view-section'),
   handle: null,
   idle: true,
   activeIndex: 0,
-  total: viewSectionDatas.length / 2
+  total: viewSectionDatas.length / 2,
 }
 
 const stopAutoPlay = function () {
   setTimeout(() => {
     slider.idle = true
-  }, 1000)
+  }, 1500)
 }
 
 const checkSections = function (lastIndex) {
@@ -105,6 +106,12 @@ const start = function () {
   window.innerWidth <= 1024 && touchControl()
 
   checkSections(slider.activeIndex)
+
+  const { letterWrapper } = getElements()
+
+  letterWrapper.forEach((wrapper, idx) => {
+    wrapper.children[0].style.transitionDelay = `calc(.065s * ${idx + 1})`
+  })
 
   document.querySelectorAll('img').forEach((img) => (img.draggable = false))
 }

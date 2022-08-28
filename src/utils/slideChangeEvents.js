@@ -1,7 +1,16 @@
+import getElements from '../elements'
+
 const slideChangeEventHandler = function (sliderIndex, lastIndex, sections) {
+  const { sectionCounter } = getElements()
+
+  const { letterWrapper } = getElements()
+
   switch (sliderIndex + '') {
     case '0': {
-      const nameTitleContainer = document.querySelector('.name-title-container')
+      sectionCounter.style.color = '#fff'
+      sectionCounter.textContent = '1'
+
+      const { nameTitleContainer } = getElements()
 
       setTimeout(() => {
         nameTitleContainer.classList.add('name-title-active')
@@ -10,15 +19,27 @@ const slideChangeEventHandler = function (sliderIndex, lastIndex, sections) {
       break
     }
     case '1': {
+      sectionCounter.style.color = '#121413'
+      sectionCounter.textContent = '2'
+
+      letterWrapper.forEach(({ children }, idx) => {
+        children[0].style.transform = 'translate(0)'
+      })
       break
     }
     case '2': {
+      sectionCounter.style.color = '#121413'
+      sectionCounter.textContent = '3'
       break
     }
     case '3': {
+      sectionCounter.style.color = '#121413'
+      sectionCounter.textContent = '4'
       break
     }
     case '4': {
+      sectionCounter.style.color = '#fff'
+      sectionCounter.textContent = '5'
       break
     }
 

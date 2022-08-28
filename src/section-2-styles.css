@@ -1,0 +1,51 @@
+.view-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.section-2-title-container,
+.skill-box-container {
+  width: 100%;
+  height: 25vh;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.section-2-letters-container {
+  margin-left: 4rem;
+  display: flex;
+}
+
+.letter-wrapper {
+  height: 3.6ch;
+  min-width: fit-content;
+  font-size: clamp(1rem, 5.75vw, 3rem);
+  overflow-y: hidden;
+}
+
+.letter-wrapper h1 {
+  transition: transform 0.5s ease;
+}
+
+.skill-box-container {
+  justify-content: center;
+}
+
+.second-section-title-letter {
+  transform: translate(0, 100%);
+}
+
+@media screen and (max-width: 850px) {
+  .section-2-title-container {
+    justify-content: center;
+  }
+
+  .section-2-letters-container {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+}

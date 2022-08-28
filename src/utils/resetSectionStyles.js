@@ -1,5 +1,11 @@
+import getElements from '../elements'
+
 const resetSectionStyles = () => {
-  const nameTitle = document.getElementsByClassName('name-title-container')[0]
+  const { nameTitle, letterWrapper } = getElements()
+
+  letterWrapper.forEach(({ children }, idx) => {
+    children[0].style.transform = 'translate(0,100%)'
+  })
 
   nameTitle.classList.remove('name-title-first-active')
 
