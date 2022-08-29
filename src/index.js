@@ -8,7 +8,7 @@ import { start } from './app'
 
 // creates and return page section tags
 
-function createSectionTags() {
+function createSectionTags () {
   return viewSectionDatas.map(({ id, background, contentHTML }) => {
     const sectionTag = document.createElement('section')
 

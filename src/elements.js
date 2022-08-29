@@ -1,16 +1,16 @@
 const getElements = function () {
-  const container = document.getElementById('container'),
-    nameTitle = document.getElementsByClassName('name-title-container')[0],
-    sectionCounter = document.getElementById('section-counter'),
-    letterWrapper = document.querySelectorAll('.letter-wrapper'),
-    nameTitleContainer = document.querySelector('.name-title-container')
+  const container = document.getElementById('container')
+  const nameTitle = document.getElementsByClassName('name-title-container')[0]
+  const sectionCounter = document.getElementById('section-counter')
+  const letterWrapper = document.querySelectorAll('.letter-wrapper')
+  const nameTitleContainer = document.querySelector('.name-title-container')
 
   return {
     container,
     sectionCounter,
     letterWrapper,
     nameTitleContainer,
-    nameTitle,
+    nameTitle
   }
 }
 

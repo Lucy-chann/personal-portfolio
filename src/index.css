@@ -38,7 +38,7 @@ body {
 }
 
 #section-counter {
-  transition: color 0.75s ease-in-out;
+  transition: color 1.4s ease-in-out;
   position: fixed;
   color: #fff;
   font-size: 6rem;

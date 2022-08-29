@@ -1,7 +1,7 @@
 .view-2 {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .section-2-title-container,
@@ -21,7 +21,7 @@
 .letter-wrapper {
   height: 3.6ch;
   min-width: fit-content;
-  font-size: clamp(1rem, 5.75vw, 3rem);
+  font-size: clamp(1rem, 5vw, 3rem);
   overflow-y: hidden;
 }
 
@@ -35,6 +35,10 @@
 
 .second-section-title-letter {
   transform: translate(0, 100%);
+}
+
+.letter-space {
+  padding: 0 1px;
 }
 
 @media screen and (max-width: 850px) {

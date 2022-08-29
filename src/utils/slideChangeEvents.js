@@ -22,9 +22,11 @@ const slideChangeEventHandler = function (sliderIndex, lastIndex, sections) {
       sectionCounter.style.color = '#121413'
       sectionCounter.textContent = '2'
 
-      letterWrapper.forEach(({ children }, idx) => {
-        children[0].style.transform = 'translate(0)'
-      })
+      setTimeout(() => {
+        letterWrapper.forEach(({ children }, idx) => {
+          children[0].style.transform = 'translate(0)'
+        })
+      }, 750)
       break
     }
     case '2': {

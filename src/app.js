@@ -12,13 +12,13 @@ const slider = {
   handle: null,
   idle: true,
   activeIndex: 0,
-  total: viewSectionDatas.length / 2,
+  total: viewSectionDatas.length / 2
 }
 
 const stopAutoPlay = function () {
   setTimeout(() => {
     slider.idle = true
-  }, 1500)
+  }, 1575)
 }
 
 const checkSections = function (lastIndex) {
@@ -110,7 +110,7 @@ const start = function () {
   const { letterWrapper } = getElements()
 
   letterWrapper.forEach((wrapper, idx) => {
-    wrapper.children[0].style.transitionDelay = `calc(.065s * ${idx + 1})`
+    wrapper.children[0].style.transitionDelay = `calc(.03s * ${idx + 1})`
   })
 
   document.querySelectorAll('img').forEach((img) => (img.draggable = false))
