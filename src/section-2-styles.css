@@ -4,6 +4,14 @@
   justify-content: space-around;
 }
 
+.second-section-container {
+  height: clamp(20rem, 60%, 40rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .section-2-title-container,
 .skill-box-container {
   width: 100%;
@@ -13,15 +21,19 @@
   align-items: center;
 }
 
-.section-2-letters-container {
+.section-2-letters-container,
+.skills-list {
   margin-left: 4rem;
+}
+
+.section-2-letters-container {
   display: flex;
 }
 
 .letter-wrapper {
-  height: 3.6ch;
+  height: 3.8ch;
   min-width: fit-content;
-  font-size: clamp(1rem, 5vw, 3rem);
+  font-size: clamp(1.05rem, 5vw, 3rem);
   overflow-y: hidden;
 }
 
@@ -30,7 +42,8 @@
 }
 
 .skill-box-container {
-  justify-content: center;
+  justify-content: flex-start;
+  height: fit-content;
 }
 
 .second-section-title-letter {
@@ -41,15 +54,97 @@
   padding: 0 1px;
 }
 
+.skills-list {
+  width: clamp(23em, 70%, 50rem);
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.skills-list>section {
+  width: fit-content;
+  margin: 0 10px;
+}
+
+.skills-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1vh;
+}
+
+.skills-list li:before {
+  content: "\2022";
+  color: var(--dark-cyan);
+  font-size: 2em;
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
+
 @media screen and (max-width: 850px) {
   .section-2-title-container {
+    min-height: 5rem;
     justify-content: center;
   }
 
   .section-2-letters-container {
     margin: 0;
   }
+
+  .skills-list {
+    margin-left: 5%;
+  }
 }
 
 @media screen and (max-width: 600px) {
+
+  .second-section-container {
+    height: clamp(25rem, 70%, 45rem);
+  }
+
+  .skill-box-container {
+    height: 25rem;
+  }
+
+  .skills-list {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .skills-list li {
+    margin-bottom: 1.5rem;
+    font-size: 14.5px;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .view-2 {
+    justify-content: flex-start;
+  }
+
+  .second-section-container {
+    height: clamp(35rem, 90%, 45rem);
+    margin-top: 2vw;
+  }
+
+  .letter-wrapper {
+    font-size: 5.7vw;
+    font-weight: 900;
+  }
+
+  .skill-box-container {
+    height: fit-content;
+    /* transform: translate(0, -1rem); */
+  }
+
+  .skills-list {
+    flex-direction: column;
+  }
+
+  .skills-list li {
+    font-size: 14px;
+  }
 }
