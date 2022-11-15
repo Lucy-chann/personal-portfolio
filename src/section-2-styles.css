@@ -28,17 +28,8 @@
 
 .section-2-letters-container {
   display: flex;
-}
-
-.letter-wrapper {
-  height: 3.8ch;
-  min-width: fit-content;
-  font-size: clamp(1.05rem, 5vw, 3rem);
-  overflow-y: hidden;
-}
-
-.letter-wrapper h1 {
-  transition: transform 0.5s ease;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .skill-box-container {
@@ -47,6 +38,8 @@
 }
 
 .second-section-title-letter {
+  transition: transform 0.5s ease;
+  font-size: clamp(35px, 5vw, 3rem);
   transform: translate(0, 100%);
 }
 
@@ -62,7 +55,7 @@
   list-style: none;
 }
 
-.skills-list>section {
+.skills-list > section {
   width: fit-content;
   margin: 0 10px;
 }
@@ -81,6 +74,12 @@
   margin: 0 20px 0 0;
 }
 
+.second-title-word-container {
+  display: inline-flex;
+  margin: 7.5px;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 850px) {
   .section-2-title-container {
     min-height: 5rem;
@@ -97,7 +96,6 @@
 }
 
 @media screen and (max-width: 600px) {
-
   .second-section-container {
     height: clamp(25rem, 70%, 45rem);
   }
@@ -119,25 +117,23 @@
   }
 }
 
-@media (max-width: 420px) {
-
+@media (max-width: 452px) {
   .view-2 {
     justify-content: flex-start;
   }
 
   .second-section-container {
-    height: clamp(35rem, 90%, 45rem);
-    margin-top: 2vw;
+    height: clamp(35rem, 95%, 45rem);
+    margin-top: 5vw;
   }
 
-  .letter-wrapper {
-    font-size: 5.7vw;
-    font-weight: 900;
+  .second-section-title-letter {
+    font-size: 40px;
   }
 
   .skill-box-container {
+    margin-top: 30px;
     height: fit-content;
-    /* transform: translate(0, -1rem); */
   }
 
   .skills-list {
@@ -146,5 +142,11 @@
 
   .skills-list li {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 290px) {
+  .second-section-title-letter {
+    font-size: 30px;
   }
 }

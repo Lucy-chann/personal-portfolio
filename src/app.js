@@ -107,8 +107,8 @@ const start = function () {
 
   const { letterWrapper } = getElements();
 
-  letterWrapper.forEach((wrapper, idx) => {
-    wrapper.children[0].style.transitionDelay = `calc(.03s * ${idx + 1})`;
+  letterWrapper.forEach((el, idx) => {
+    el.style.transitionDelay = `calc(.03s * ${idx + 1})`;
   });
 
   document.querySelectorAll("img").forEach((img) => (img.draggable = false));
