@@ -72,7 +72,7 @@
   left: 4%;
   text-transform: capitalize;
   font-size: clamp(2rem, 2.9vw, 3rem);
-  color: #fff;
+  color: var(--white);
   overflow: hidden;
   z-index: 5;
 }

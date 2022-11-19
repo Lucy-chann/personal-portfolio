@@ -1,6 +1,5 @@
 import "./index.css";
 import "./app.css";
-import "./section-2-styles.css";
 import viewSectionDatas from "./viewSectionDatas";
 import { start } from "./app";
 

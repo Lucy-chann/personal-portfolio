@@ -4,14 +4,6 @@
   justify-content: space-around;
 }
 
-.second-section-container {
-  height: clamp(20rem, 60%, 40rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .section-2-title-container,
 .skill-box-container {
   width: 100%;
@@ -39,7 +31,7 @@
 
 .second-section-title-letter {
   transition: transform 0.5s ease;
-  font-size: clamp(35px, 5vw, 3rem);
+  font-size: clamp(40px, 5vw, 3rem);
   transform: translate(0, 100%);
 }
 
@@ -71,13 +63,37 @@
   color: var(--dark-cyan);
   font-size: 2em;
   display: inline-block;
-  margin: 0 20px 0 0;
+  margin-right: 20px;
 }
 
 .second-title-word-container {
   display: inline-flex;
   margin: 7.5px;
   overflow: hidden;
+}
+
+.triangles-container {
+  width: 100%;
+  height: 175px;
+  position: absolute;
+  top: 0;
+}
+
+.section-2-circle {
+  position: absolute;
+  top: 10px;
+  left: -50px;
+  transform: rotate(60deg);
+  width: clamp(7.5rem, 30vw, 300px);
+  z-index: -1;
+}
+.section-2-triangle {
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  transform: rotate(25deg);
+  width: clamp(500px, 70vw, 1000px);
+  z-index: -1;
 }
 
 @media screen and (max-width: 850px) {
@@ -96,14 +112,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .second-section-container {
-    height: clamp(25rem, 70%, 45rem);
-  }
-
-  .skill-box-container {
-    height: 25rem;
-  }
-
   .skills-list {
     width: 95%;
     display: flex;
@@ -118,22 +126,13 @@
 }
 
 @media (max-width: 452px) {
+  #counter-container {
+    bottom: 15px;
+    right: 0;
+  }
+
   .view-2 {
     justify-content: flex-start;
-  }
-
-  .second-section-container {
-    height: clamp(35rem, 95%, 45rem);
-    margin-top: 5vw;
-  }
-
-  .second-section-title-letter {
-    font-size: 40px;
-  }
-
-  .skill-box-container {
-    margin-top: 30px;
-    height: fit-content;
   }
 
   .skills-list {
@@ -141,12 +140,22 @@
   }
 
   .skills-list li {
-    font-size: 14px;
+    font-size: 13px;
+  }
+
+  .skills-list li:before {
+    margin-right: 10px;
+  }
+
+  .triangles-container {
+    transform: scale(0.7);
+    top: 25%;
+    right: -55px;
   }
 }
 
 @media (max-width: 290px) {
-  .second-section-title-letter {
-    font-size: 30px;
+  .section-2-letters-container {
+    font-size: 60px !important;
   }
 }

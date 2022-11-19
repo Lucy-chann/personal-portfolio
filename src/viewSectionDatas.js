@@ -1,9 +1,10 @@
-import secondSectionElements from "./sectionElements/secondSection";
-import firstSectionElements from "./sectionElements/firstSection";
+import secondSectionElements from "./sectionElements/secondSection/secondSection";
+import firstSectionElements from "./sectionElements/firstSection/firstSection";
 import squareImg from "./assets/parallax shapes/main-square-fluid.png";
 import cylinderImg from "./assets/parallax shapes/main-cylinder-fluid.png";
 import circleImg from "./assets/parallax shapes/main-circle-fluid.png";
 import emptyCenterTriangleImg from "./assets/parallax shapes/shape-triangle-emptyCenter.png";
+import thirdSectionElements from "./sectionElements/thirdSection/thirdSection";
 
 const fluidImageDatas = [
   {
@@ -75,9 +76,9 @@ const viewSectionDatas = [
   {
     id: 2,
     background: "main-white",
-    contentHTML: secondSectionElements(skillsData),
+    contentHTML: secondSectionElements(skillsData, fluidImageDatas),
   },
-  { id: 3, background: "main-gradient", contentHTML: "" },
+  { id: 3, background: "main-gradient", contentHTML: thirdSectionElements },
   { id: 4, background: "main-white", contentHTML: "" },
   { id: 5, background: "main-black", contentHTML: "" },
 ];

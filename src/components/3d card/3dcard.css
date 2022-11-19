@@ -1,0 +1,90 @@
+@property --border-rotation {
+  syntax: "<angle>";
+  initial-value: 0;
+  inherits: false;
+}
+
+:root {
+  --degree: 36deg;
+}
+
+.card-container {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+.card {
+  width: 350px;
+  height: 525px;
+  background-color: #191c29;
+  border-radius: 20px;
+  padding: 15px;
+  color: var(--white);
+}
+
+.card-border {
+  --size: 12.5px;
+  z-index: -1;
+}
+
+.card-border-blur {
+  --size: 17.5px;
+  z-index: -2;
+  filter: blur(5px);
+}
+
+.card-border,
+.card-border-blur {
+  animation: spin 1.5s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + var(--size));
+  height: calc(100% + var(--size));
+  top: calc(var(--size) / -2);
+  left: calc(var(--size) / -2);
+  border-radius: 25px;
+  background-image: linear-gradient(
+    var(--border-rotation),
+    #4bc0c8,
+    #c779d0,
+    #feac5e
+  );
+}
+
+@keyframes spin {
+  0% {
+    --border-rotation: calc(var(--degree) * 0);
+  }
+  10% {
+    --border-rotation: calc(var(--degree) * 1);
+  }
+  20% {
+    --border-rotation: calc(var(--degree) * 2);
+  }
+  30% {
+    --border-rotation: calc(var(--degree) * 3);
+  }
+  40% {
+    --border-rotation: calc(var(--degree) * 4);
+  }
+  50% {
+    --border-rotation: calc(var(--degree) * 5);
+  }
+  60% {
+    --border-rotation: calc(var(--degree) * 6);
+  }
+  70% {
+    --border-rotation: calc(var(--degree) * 7);
+  }
+  80% {
+    --border-rotation: calc(var(--degree) * 8);
+  }
+  90% {
+    --border-rotation: calc(var(--degree) * 9);
+  }
+  100% {
+    --border-rotation: calc(var(--degree) * 10);
+  }
+}

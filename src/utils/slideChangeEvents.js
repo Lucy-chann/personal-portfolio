@@ -17,6 +17,10 @@ const counter = {
     element.classList.add(className);
 
     setTimeout(() => {
+      this.elements.currentCounter.children[0].innerText = this.countNumber;
+    }, this.reorderDuration - 300);
+
+    setTimeout(() => {
       this.renderCounter(counterColor);
       element.classList.remove(className);
     }, this.reorderDuration);
@@ -27,7 +31,7 @@ const counter = {
     } else {
       setTimeout(() => {
         this.elements.currentCounter.style.color = color;
-      }, changeDuration);
+      }, changeDuration - 300);
     }
   },
   sharedConditions(index, counterElement) {
